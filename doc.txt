@@ -1,0 +1,63 @@
+command used:
+  662  mkdir database_version_control_system
+  663  cd database_version_control_system/
+  664  ls
+  665  perl --version
+  666  mkdir project1
+  667  cd project1/
+  668  ls
+  669  git init .
+  670  touch README.md
+  671  ls
+  672  rm README.md 
+  673  ls
+  674  echo "# sqitch_demo" >> README.md
+  675  git init
+  676  git add README.md
+  677  git commit -m "first commit"
+  678  git branch -M main
+  679  git remote add origin https://github.com/basantbhandari/sqitch_demo.git
+  680  git push -u origin main
+  681  sqitch init project1 --url https://github.com/basantbhandari/sqitch_demo/ --engine pg
+  682  sqitch init project1 --uri https://github.com/basantbhandari/sqitch_demo/ --engine pg
+  683  ls
+  684  cat sqitch.conf
+  685  sqitch config --user engine.pg.client /opt/local/pgsql/bin/psql
+  686  sqitch config --user user.name 'Basant Babu Bhandari'
+  687  sqitch config --user user.email 'basantbhandari2074@gmail.com'
+  688  cat ~/.sqitch/sqitch.conf
+  689  cat sqitch.plan
+  690  git add .
+  691  git commit -am 'Initialize Sqitch configuration.'
+  692  ls
+  693  ls /home/basant/Downloads/tekvortax/sql\ query/
+  694  cat /home/basant/Downloads/tekvortax/sql\ query/SQLQuery_1.sql 
+  695  sqitch add /home/basant/Downloads/tekvortax/sql\ query/SQLQuery_1.sql  -n "user table creation schema added"
+  696  cp /home/basant/Downloads/tekvortax/sql\ query/SQLQuery_1.sql ./
+  697  ls
+  698  sqitch add SQLQuery_1.sql  -n "user table creation schema added"
+  699  gedit deploy/SQLQuery_1.sql.sql 
+  700  gedit revert/SQLQuery_1.sql.sql 
+  701  sqitch deploy db:pg://postgres:root@localhost:5432sqitchb
+  702  sqitch deploy db:pg://postgres:root@localhost:5432:sqitchb
+  703  sqitch deploy db:pg:sqitchb
+  704  psql
+  705  ln -s /usr/bin/psql /opt/local/pgsql/bin/psql
+  706  sqitch config --user engine.pg.client /usr/bin/psql 
+  707  cat ~/.sqitch/sqitch.conf
+  708  sqitch deploy db:pg:sqitchb
+  709  sudo sqitch deploy db:pg:sqitchb
+  710  sqitch deploy db:pg://postgres:root@localhost:5432:sqitchb
+  711  sqitch deploy db:pg://postgres@localhost:5432:sqitchb
+  712  sqitch deploy db:pg://postgres@localhost:5432/sqitchb
+  713  sqitch deploy db:pg://postgres:root@localhost:5432/sqitchb
+  714  psql -d sqitchb -c '\dn flipr'
+  715  sqitch verify db:pg://postgres:root@localhost:5432/sqitchb
+  716  sqitch status db:pg://postgres:root@localhost:5432/sqitchb
+  717  sqitch revert db:pg://postgres:root@localhost:5432/sqitchb
+  718  cat deploy/SQLQuery_1.sql.sql 
+  719  gedit deploy/SQLQuery_1.sql.sql 
+  720  sqitch deploy db:pg://postgres:root@localhost:5432/sqitchb
+  721  history
+
+
